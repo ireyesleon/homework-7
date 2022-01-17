@@ -1,4 +1,5 @@
-# test
+# Yumi Yumi App
+  # Table of contents
   * [Description](#descritpion)
   * [Installation](#installation)
   * [Usage](#usage)
@@ -8,19 +9,19 @@
   * [Questions](#questions)
   
   ## Descritpion
-  test
+  This project was created with the objective to make easier for the user to find recipes by typing the ingredients that want in the recipe
   ## Installation
-  test
+  Just visit the page https://ireyesleon.github.io/Project-Yumi-Yumi/
   ## Usage
-  test
+  Type the ingredients that you want in your recipe and click find, it will display a list of recipes, if you want to see the full detail clic on view more.
   ## Contribution
-  test
+  I don't know what to put here yet.
   ## Tests
-  test
+  I don't know what to put here yet.
   ## License
   ISC
   ## Questions
-  Please feel free to reach
-  GitHub: https://github.com/ireyesleon
-  Email: izaaiaz@gmail.com
+  If you have any question please feel free to reach me:
+  #GitHub: https://github.com/ireyesleon
+  #Email: izaaiaz@gmail.com
   
