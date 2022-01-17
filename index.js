@@ -62,6 +62,7 @@ inquirer
 
 function generateMarkdown(data) {
     return `# ${data.title}
+  # Table of contents
   * [Description](#descritpion)
   * [Installation](#installation)
   * [Usage](#usage)
@@ -83,9 +84,9 @@ function generateMarkdown(data) {
   ## License
   ${data.license}
   ## Questions
-  Please feel free to reach
-  GitHub: https://github.com/${data.github}
-  Email: ${data.email}
+  If you have any question please feel free to reach me:
+  #GitHub: https://github.com/${data.github}
+  #Email: ${data.email}
   `;
   }
 
