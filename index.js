@@ -2,6 +2,34 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
+// TODO: Create a function that returns a license badge based on which license is passed in
+// If there is no license, return an empty string
+function renderLicenseBadge(license) {
+  if (license !== "") {
+    return `![GitHub license](https://img.shields.io/badge/license-${license}-green.svg)`
+  }
+  return "";
+}
+
+// TODO: Create a function that returns the license link
+// If there is no license, return an empty string
+function renderLicenseLink(license) {
+  if (license !== "") {
+    return `[License](#license)`
+  }
+  return "";
+}
+
+// TODO: Create a function that returns the license section of README
+// If there is no license, return an empty string
+function renderLicenseSection(license) {
+  if (license !== "") {
+    return `## License
+    Project Licensed under ${license}`
+  }
+  return "";
+}
+
 // TODO: Create an array of questions for user input
 inquirer
 .prompt([
@@ -28,18 +56,18 @@ inquirer
     {
         type: 'input',
         name: 'contribution',
-        message: 'Please write the contribution guidelines of your porject:',
+        message: 'Please write the contribution guidelines of your Project:',
     },
     {
         type: 'input',
-        name: 'test',
+        name: 'tests',
         message: 'Please write how to test your Project:',
     },
     {
       type: 'list',
       message: 'Please select the license for your README file:',
       name: 'license',
-      choices: ['ISC', 'Apache', 'MIT', 'GNU General v2', 'GNU General v3', 'GNU Affero', 'GNU Lesser General v2.1', 'BSD-2', 'BSD-3', 'Boost Software', 'Creative Commons Zero', 'Eclipse', ''],
+      choices: ['ISC', 'Apache', 'MIT', ''],
     },
     {
       type: 'input',
@@ -55,43 +83,37 @@ inquirer
 
 // TODO: Create a function to write README file
 .then((data) => {
-    fs.writeFile(`README1.md`, generateMarkdown(data), (err) =>
-      err ? console.log(err) : console.log('Success!')
+    fs.writeFile(`README.md`, generateMarkdown(data), (err) =>
+      err ? console.log(err) : console.log('Your README file was created successfully!')
     );
   });
 
 function generateMarkdown(data) {
     return `# ${data.title}
+  ${renderLicenseBadge(data.license)}
   # Table of contents
-  * [Description](#descritpion)
+  * [Description](#description)
   * [Installation](#installation)
   * [Usage](#usage)
+  * ${renderLicenseLink(data.license)}
   * [Contribution](#contribution)
-  * [Tests](#test)
-  * [License](#license)
+  * [Tests](#tests)
   * [Questions](#questions)
   
-  ## Descritpion
+  ## Description
   ${data.description}
   ## Installation
   ${data.installation}
   ## Usage
   ${data.usage}
+  ${renderLicenseSection(data.license)}
   ## Contribution
   ${data.contribution}
   ## Tests
-  ${data.test}
-  ## License
-  ${data.license}
+  ${data.tests}
   ## Questions
   If you have any question please feel free to reach me:
-  #GitHub: https://github.com/${data.github}
-  #Email: ${data.email}
+  * [GitHub](https://github.com/${data.github})
+  * Email: ${data.email}
   `;
   }
-
-// TODO: Create a function to initialize app
-function init() {}
-
-// Function call to initialize app
-init();
