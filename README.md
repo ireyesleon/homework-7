@@ -1,4 +1,4 @@
-# Yumi Yumi
+# README File Generator
   ![GitHub license](https://img.shields.io/badge/license-ISC-green.svg)
   # Table of contents
   * [Description](#description)
@@ -10,11 +10,11 @@
   * [Questions](#questions)
   
   ## Description
-  This project is about an app that finds recipes depending on the ingredients that you type.
+  This project is about a Node JS code to generate a professional README file with a set of predetermined questions.
   ## Installation
-  Enter to the url https://ireyesleon.github.io/Project-Yumi-Yumi/ and type your ingredients.
+  Clone the code in your PC and run the index.js file.
   ## Usage
-  You just have to go to the search recipe module and enter the ingredients, then clic on search.
+  Once you run the index.js file it will show you a set of questions, which will be used to generate the README file with the template structure.
   ## License
     Project Licensed under ISC
   ## Contribution
